@@ -1,0 +1,89 @@
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+
+h1, h2, h3, p, label {
+  margin-left:8px;
+  margin-right:8px;
+}
+
+.floating-main-container {
+  height:20vw;
+}
+
+.float-container {
+  display:flex;
+  justify-content:space-around;
+  align-items:center;
+  position:fixed;
+  top:10;
+  left:50%;
+  transform:translatex(-50%);
+  border-radius:6px;
+  width:90vw;
+  height:20vw;
+  
+  margin-top:5px;
+  background-color:#7676b8;
+  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.float-container div {
+  height:70%;
+  width:10vw;
+  border-radius:5px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  
+
+  background-color:red;
+}
+
+main {
+  display:flex;
+  flex-direction:column;
+  
+}
+
+main div {
+  width:90vw;
+  border-radius:5px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+  
+  margin:10px auto;
+  
+}
+
+main div button {
+  font-size:16px;
+  padding:5px;
+  position:relative;
+  float:right;
+  margin:20px;
+
+  background-color:#3fd43f;
+  border-radius:3px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.reset-button {
+  position:relative;
+  float:left;
+  margin:20px;
+}
+
+label {
+  font-size:small;
+}
+
+input {
+  margin-left:10px;
+  padding:5px;
+}
+
+input:focus {
+  border:3px solid black;
+}

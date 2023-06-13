@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>javascript dom</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="prism.css">
+</head>
+
+<body>
+
+
+  <div class="floating-main-container">
+    <div class="float-container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+    </div>
+  </div>
+
+  <main>
+
+    <div>
+      <h2>1. padding change</h2>
+      <pre class="language-javascript">
+        <code>
+          
+var source_padding=document.querySelector('div').querySelector('div').querySelectorAll('div');
+  padding_value=window.getComputedStyle(source_padding[0]).getPropertyValue('padding');
+
+function changePadding() {
+var padding_input=document.getElementById("padding_input").value;
+
+var source_padding=document.querySelector("div").querySelector("div").querySelectorAll("div");
+  
+  for (let i = 0; i < source_padding.length; i++) {
+    source_padding[i].style.padding=padding_input;
+  }
+}
+                      </code>
+  </pre>
+      <h3>reset function -</h3>
+      <pre class="language-javascript">
+      <code>
+function resetPadding() {
+
+
+  for (let i = 0; i < source_padding.length; i++) {
+    source_padding[i].style.padding=padding_value;
+  }
+  console.log("reset padding worked");
+}
+
+
+        </code>
+      </pre>
+      <label for="padding_input">enter the padding value:</label>
+      <input type="text" id="padding_input" name="padding_input" placeholder="Eg. '10px', '15vw'">
+      <br>
+
+      <button class="reset-button" onclick="resetPadding();">reset</button>
+      <button onclick="changePadding();">change</button>
+    </div>
+
+
+
+
+    <div>
+      <h2>2. background color change</h2>
+      <pre class="language-javascript">
+        <code>
+          // background-color
+var source_backg=document.querySelector("div").querySelector("div").querySelectorAll("div");
+var backg_value=window.getComputedStyle(source_backg[0]).getPropertyValue('backgroundColor');
+
+function changeBackgroundColor() {
+  console.log("change backgroundcolor working");
+  let input_value=document.getElementById("backg_input").value;
+  for (let i = 0; i < source_backg.length; i++) {
+    source_backg[i].style.backgroundColor=input_value;
+  }
+}
+
+        </code>
+      </pre>
+
+      <h3>reset function</h3>
+
+      <pre class="language-javascript">
+      <code>
+        function resetBackgroundColor() {
+  for (let i = 0; i < source_backg.length; i++) {
+    source_backg[i].style.backgroundColor=backg_value;
+  }
+}
+
+      </code>
+    </pre>
+
+      <label for="backg_input">enter the color name:</label>
+      <input type="text" id="backg_input" placeholder="Eg. 'black', 'indigo'">
+      <br>
+      <button class="reset-button" onclick="resetBackgroundColor();">reset</button>
+      <button onclick="changeBackgroundColor();">change</button>
+    </div>
+
+
+
+
+    <div>
+      <h2>3. border change</h2>
+
+
+      <pre class="language-javascript">
+        <code>
+          // change border
+var source_border=document.querySelector("div").querySelector("div").querySelectorAll("div");
+var border_value=window.getComputedStyle(source_border[0]).getPropertyValue('border');
+function changeBorder() {
+  console.log("changeBorder(); working");
+  let input_value=document.getElementById("border_input").value;
+
+  for (let i=0; i<source_border.length; i++) {
+    source_border[i].style.border=input_value;
+  }
+  
+}
+        </code>
+      </pre>
+
+      <h3>reset function</h3>
+      <pre>
+        <code class="language-javascript">
+          
+function resetBorder() {
+  console.log("resetBorder() called");
+
+  for(let i=0; i<source_border.length; i++) {
+    source_border[i].style.border=border_value;
+  }
+}
+        </code>
+      </pre>
+    
+
+    <label for="border_input">enter the border value:</label>
+      <input type="text" id="border_input" placeholder="10px solid black">
+      <br>
+
+      <button class="reset-button" onclick="resetBorder();">reset</button>
+      <button onclick="changeBorder();">change</button>
+      
+    </div>
+  </main>
+
+
+  <script src="prism.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
