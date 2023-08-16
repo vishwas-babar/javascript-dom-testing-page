@@ -125,7 +125,7 @@ function changeBorder() {
   console.log("changeBorder(); working");
   let input_value=document.getElementById("border_input").value;
 
-  for (let i=0; i<source_border.length; i++) {
+  for (let i = 0; i < source_border.length; i++) {
     source_border[i].style.border=input_value;
   }
   
@@ -140,21 +140,67 @@ function changeBorder() {
 function resetBorder() {
   console.log("resetBorder() called");
 
-  for(let i=0; i<source_border.length; i++) {
+  for(let i = 0; i < source_border.length; i++) {
     source_border[i].style.border=border_value;
   }
 }
         </code>
       </pre>
-    
 
-    <label for="border_input">enter the border value:</label>
+
+      <label for="border_input">enter the border value:</label>
       <input type="text" id="border_input" placeholder="10px solid black">
       <br>
 
       <button class="reset-button" onclick="resetBorder();">reset</button>
       <button onclick="changeBorder();">change</button>
-      
+
+    </div>
+
+
+    <div>
+      <h2>4. flex justify-content property change</h2>
+
+      <pre class="language-javascript">
+        <code>
+          //change justify-content
+var source_justify=document.querySelector('div').querySelector('div');
+var justify_value=window.getComputedStyle(source_justify).getPropertyValue('justify-content');
+
+function changeJustifyContent() {
+  let input_value=document.getElementById('justify-content').value;
+
+  source_justify.style.justifyContent=input_value;
+}
+        </code>
+      </pre>
+
+      <h3>reset function for justify content</h3>
+      <pre class="language-javascript">
+        <code>
+          //reset justify-content
+function resetJustifyContent() {
+  source_justify.style.justifyContent=justify_value;
+}
+        </code>
+      </pre>
+
+      <label for="justify-content">justify-content:</label>
+      <select id="justify-content">
+        <option value="">Default</option>
+        <option value="flex-start">Flex Start</option>
+        <option value="flex-end">Flex End</option>
+        <option value="center">Center</option>
+        <option value="space-between">Space Between</option>
+        <option value="space-around">Space Around</option>
+        <option value="space-evenly">Space Evenly</option>
+        <option value="stretch">Stretch</option>
+      </select>
+
+      <br>
+      <button onclick="resetJustifyContent();" class="reset-button">reset</button>
+      <button onclick="changeJustifyContent();">change</button>
+
     </div>
   </main>
 
